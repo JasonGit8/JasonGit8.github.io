@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+<div class="container home-con">
+  <div class="row">
+    <div class="col-sm-2 home-con-nav">
+      <div class="pside">
+        <h3 class="tit">分类</h3>
+        <ul class="list">
+          {% for item in site.categories %}
+            <li><a href="#{{item[0]}}">{{item[0]}}<sup>{{ item[1] | size }}</sup></a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-10 home-con-list">
+      <p class="all-article"><a href="/">全部文章</a> <span class="categ_name">></span> <span class="categ_text"></span></p>
+
+      <ul class="archives">
+        {% for post in site.posts %}
+        <li class="article-list article-list-{{post.categories}} article-list-{{post.tags}}">
+          <h3><a href="{{ site.baseurl }}{{ post.url }}">{{post.title}}</a></h3>
+          <p class="vice-title">Jason<span> 发表于</span> <span>{{ post.date | date: "%F" }}</span></p>
+          <div class="note">{{ post.excerpt }}</div>
+          <div class="txt-muted">
+             <a href="{{ site.baseurl }}{{ post.url }}">评论<span>(16)</span></a>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+      
+    </div>
+  </div>
+</div>
+
+
