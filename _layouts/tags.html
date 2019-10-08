@@ -1,15 +1,15 @@
 ---
 layout: default
 ---
-
-<div class="container home-con">
+<main class="container page-con">
+  <!-- 标签页 -->
   <div class="row">
     <div class="col-sm-2 home-con-nav">
       <div class="pside">
         <h3 class="tit">标签</h3>
         <ul class="list tags clearfix">
           {% for item in site.tags %}
-            <li><a href="/tags/#{{item[0]}}">{{item[0]}}<sup>{{ item[1] | size }}</sup></a></li>
+            <li><a href="/tags/#{{item[0]}}" class="color-{{post.categories}}">{{item[0]}}<sup>{{ item[1] | size }}</sup></a></li>
           {% endfor %}
         </ul>
       </div>
@@ -24,7 +24,7 @@ layout: default
           <p class="vice-title">Jason<span> 发表于</span> <span>{{ post.date | date: "%F" }}</span></p>
           <div class="note">{{ post.excerpt }}</div>
           <div class="txt-muted">
-             <a href="{{ site.baseurl }}{{ post.url }}">评论<span>(16)</span></a>
+             <!-- <a href="{{ site.baseurl }}{{ post.url }}">评论<span>(16)</span></a> -->
           </div>
         </li>
         {% endfor %}
@@ -32,6 +32,7 @@ layout: default
       
     </div>
   </div>
-</div>
+</main>
+
 
 

@@ -24,14 +24,13 @@ a:focus{
 .none{
   display: none;
 }
-.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
-	color: #fff;
-}
 /* 配色 */
 .color-01{ color: #24292e; } /*深色背景*/
 .color-02{ color: #333; } /*大标题*/
 .color-03{ color: #666666; } /*侧边*/
-.color-04{ color: #175d96; } /*蓝色*/
+.color-04{ color: #e34c26 ; } /*红色*/
+
+.text-red{ color: #e34c26 ; } /*红色*/
 
 .highlight {
     background: #2d2d2d;
@@ -42,7 +41,10 @@ a:focus{
     color: #fff;
     background: none;
 }
-img {
+img{
+	border-radius: 5px;
+}
+.page-content img {
 	max-width: 100%;
     border: 1px solid #e9e9e9;
     margin: 5px auto;
@@ -51,7 +53,7 @@ img {
     display: block;
 }
 @media (max-width: 767px) {
-	img{
+	.page-content img{
 		width: 100%;
 	}
 }
@@ -65,15 +67,20 @@ img {
   url('//at.alicdn.com/t/webfont_rqc3p9m94fh.svg#思源黑体-细') format('svg'); /* iOS 4.1- */
 }
 
-.bg-color-01{ background-color: #24292e; }
-
+.top-shadow{
+	box-shadow: 0 1px 1px #f1f1f1;
+	background: #fff;
+}
+.bottom-shadow{ 
+    box-shadow: 0 -1px 1px #f1f1f1;
+    background: #fff;
+}
 .all-article a{
-	color: #666;
+	color: #333;
 }
 .logo-name{
     line-height: 32px;
     padding-left: 6px;
-    color: #fff;
     font-family: 'webfont';
     font-size: 20px;
 }
@@ -86,16 +93,16 @@ img {
     padding: 3px 0;
     border: none;
     border-radius: 0;
-    margin-bottom: 12px;
+    margin-bottom: 1px;
 }
 .navbar-default .navbar-nav>li>a,footer a{
-    color: #fff;
-}
-.navbar-default .navbar-nav>li>a:hover,footer a:hover{
-	color: #bebfb7 !important;
+    color: #333;
 }
 .navbar-brand{
 	padding: 9px 0 0 15px;
+}
+.navbar-brand .logo{
+	margin: 0;
 }
 .row{
 	margin: 0;
@@ -108,6 +115,75 @@ img {
 	background-size: 100%;
 	margin: 0;
 }
+/* header-banner start*/
+.header-banner {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../img/banner_03.jpg");
+    text-align: center;
+    color: white
+}
+
+.header-banner .header-content {
+    position: relative;
+    text-align: center;
+    padding: 70px 15px 30px;
+    width: 100%
+}
+
+.header-banner .header-content .header-content-inner h1 {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.header-banner .header-content .header-content-inner hr {
+    margin: 30px auto;
+    width: 230px;
+}
+
+.header-banner .header-content .header-content-inner p {
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    margin-bottom: 50px
+}
+
+@media (min-width: 768px) {
+    .header-banner {
+        min-height:350px
+    }
+
+    .header-banner .header-content {
+        position: absolute;
+        top: 50%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+        padding: 0 50px
+    }
+
+    .header-banner .header-content .header-content-inner {
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .header-banner .header-content .header-content-inner p {
+        font-size: 18px;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto
+    }
+}
+/* header-banner end*/
 .container{
 	padding: 0;
 }
@@ -117,11 +193,11 @@ img {
     }
 }
 /* 首页主体 */
-.home-con{
-    background-color: #F7F7F7;
+.page-con{
     min-height: 600px;
+    padding-top: 12px;
 }
-.home-con-list{
+.page-con-list{
     background-color: #fff;
 }
 .categ_name{
@@ -145,7 +221,11 @@ img {
     color: #777;
     font-family: \5fae\8f6f\96c5\9ed1;
 }
-.home-con .vice-title{
+.pside .list .active{
+	color: #e34c26;
+	font-weight: bold;
+}
+.page-con .vice-title{
     font-size: 12px;
     color: #999;
     font-family: \5fae\8f6f\96c5\9ed1;
@@ -153,17 +233,26 @@ img {
 .vice-title span{
     margin-left: 5px;
 }
-.home-con .note{
+.page-con .note{
     color: #777;
 }
-.home-con .article-list{
-    border-top: 1px solid #d1d5da;
-    padding-bottom: 18px;
+.page-con .article-list{
+    padding-bottom: 2px;
+    border-bottom: 1px solid #d1d5da;
 }
-.home-con .article-list a{
+.all-article{
+    border-bottom: 1px solid #d1d5da;
+    padding: 0 0 10px;
+}
+.page-con .article-list a{
 	color: #333; 
 }
-.home-con .txt-muted{
+.page-con .archives-list{
+	border: none;
+	border-bottom: 1px solid #d1d5da;
+	padding: 0;
+}
+.page-con .txt-muted{
     margin-top: 15px;
     text-align: right;
     color: #999;
@@ -201,12 +290,12 @@ img {
 	margin-top: 12px;
 }
 .footer-img [class*='col-'] {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 5px;
+    padding-left: 5px;
 }
 .footer-img [class*='col-'] > a{
     padding: 0;
-    margin: 0;
+    margin-bottom: 10px;
     border: none;
 }
 .footer-img a{
@@ -240,10 +329,11 @@ img {
 	color: #fff;
 }
 .footer-img a:hover .portfolio{
-	-webkit-transition: all 0.2s;
-    -moz-transition: all 0.2s;
-    transition: all 0.2s;
-	background: rgba(240, 95, 64, 0.9);
+	border-radius: 5px;
+	-webkit-transition: all 0.3s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+	background: rgba(240, 95, 64, 0.8);
 }
 .footer-img a:hover .portfolio-content{ 
 	display: block;
@@ -261,7 +351,7 @@ footer li{
 	margin-right: 15px;
 }
 footer p{
-	color: #fff;
+	color: #333;
 }
 .back-top{
 	position: fixed;
@@ -280,7 +370,8 @@ footer p{
 	position: relative;
 	width: 30px;
 	height: 30px;
-	background: url(../img/wechat.png) no-repeat;
+	background: #eee;
+	background: url(../img/wechat-ico.png) no-repeat;
 }
 .wechat{
 	position: absolute;
@@ -289,14 +380,16 @@ footer p{
 	width: 0;
 	height: 0;
 	background: #eee;
+	background: url(../img/wechat.png) no-repeat;
 	border-radius: 4px;
+	border: 1px solid #eee;
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
 }
 .wechat-enter{
-	width: 200px;
-	height: 200px;
+	width: 202px;
+	height: 202px;
 }
 .wechat-enter:after{
 	content: "";
@@ -315,11 +408,8 @@ footer p{
 	border: none;
 }
 /* 文章页 */
-.post .title{
+.post-title{
 	border-bottom: 1px solid #dcdcdc;
-}
-.post .txt-muted{
-	margin: 0;
 }
 .post-con{
 	padding: 20px;

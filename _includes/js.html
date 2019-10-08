@@ -4,10 +4,12 @@
 	// 切换分类
 	var show_post = function(anchor){
 		if(anchor){
-	        $(".archives li").hide(); // 先隐藏所有列表
 	        var cls = anchor.substr(1); // 获取 #号后面
+	        $(".archives li").hide(); // 先隐藏所有列表
 	        $(".article-list-" + cls).show(); // 分类名和hash一样显示
 	        $(".categ_text").text(cls); // 填充分类名
+	        $('.home-con-nav a').removeClass('active');
+	        $(".home-con-nav ." + cls).addClass('active');
 	    }
 	}
 	// 页面加载触发
