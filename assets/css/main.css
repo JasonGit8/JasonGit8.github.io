@@ -111,7 +111,7 @@ img{
 	width: 32px;
 	height: 32px;
 	text-indent: -99999px;
-	background: url(../img/fluidicon.png) no-repeat;
+	background: url(/assets/img/fluidicon.png) no-repeat;
 	background-size: 100%;
 	margin: 0;
 }
@@ -125,7 +125,7 @@ img{
     -o-background-size: cover;
     background-size: cover;
     background-position: center;
-    background-image: url("../img/banner_03.jpg");
+    background-image: url("/assets/img/banner_03.jpg");
     text-align: center;
     color: white
 }
@@ -361,7 +361,7 @@ footer p{
 	width: 48px;
 	height: 48px;
 	border-radius: 4px;
-	background: rgba(84,84,84,0.5) url(../img/back-top.png) no-repeat center center;
+	background: rgba(84,84,84,0.5) url(/assets/img/back-top.png) no-repeat center center;
 } 
 .back-top:hover{
 	background-color: rgba(84,84,84,0.7)
@@ -371,7 +371,7 @@ footer p{
 	width: 30px;
 	height: 30px;
 	background: #eee;
-	background: url(../img/wechat-ico.png) no-repeat;
+	background: url(/assets/img/wechat-ico.png) no-repeat;
 }
 .wechat{
 	position: absolute;
@@ -380,7 +380,7 @@ footer p{
 	width: 0;
 	height: 0;
 	background: #eee;
-	background: url(../img/wechat.png) no-repeat;
+	background: url(/assets/img/wechat.png) no-repeat;
 	border-radius: 4px;
 	border: 1px solid #eee;
 	-webkit-transition: all 0.3s;
